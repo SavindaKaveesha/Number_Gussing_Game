@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Guess the Number (between 1 and 100)</h1>
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    {% if guesses_left %}
+        <p>Guesses remaining: {{ guesses_left }}</p>
+    {% endif %}
+
+    <form method="POST" action="/guess">
+        <input type="number" name="guess" placeholder="Enter your guess">
+        <button type="submit">Guess</button>
+    </form>
+</body>
+</html>
